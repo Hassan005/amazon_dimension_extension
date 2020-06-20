@@ -1,6 +1,6 @@
 {
     "manifest_version":2,
-    "name":"Amazon Title Extractor",
+    "name":"Amazon Dimension",
     "version": "1.0",
     "permissions": ["storage"],
     "content_scripts":[
