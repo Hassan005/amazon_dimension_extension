@@ -38,7 +38,23 @@ var hight = vol[2]
 L=parseFloat(length)
 W=parseFloat(width)
 H=parseFloat(hight)
-item_weight=" 3 pounds ("
-item_weight = item_weight.split('(');
-console.log(item_weight[0])
+item_weight=" 3 pounds "
+
+
+if(item_weight.includes('('))
+{
+    item_weight = item_weight.split('(');
+    console.log(item_weight[0])
 }
+
+else{
+    // item_weight = item_weight.split('(');
+console.log("Nope")
+}
+
+usps_cost=0.55355
+console.log(parseFloat(3.16159.toFixed(1)))
+item_weight = item_weight.split('(');
+item_weight=item_weight[0] + " Pounds "
+}
+
