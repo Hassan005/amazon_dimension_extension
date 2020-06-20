@@ -38,5 +38,7 @@ var hight = vol[2]
 L=parseFloat(length)
 W=parseFloat(width)
 H=parseFloat(hight)
-
+item_weight=" 3 pounds ("
+item_weight = item_weight.split('(');
+console.log(item_weight[0])
 }

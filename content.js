@@ -41,13 +41,17 @@ var shiping_weight_xpath = document.evaluate(shiping_weight, document, null, XPa
         {
           // console.log("item weight 1******************",item_weight_xpath.nextSibling.nextSibling.textContent)
           fitem_weight=item_weight_xpath.nextSibling.nextSibling.textContent
-          chrome.runtime.sendMessage(dimensions,fitem_weight);
+          // chrome.runtime.sendMessage(dimensions,fitem_weight);
+
+          chrome.runtime.sendMessage({"dimensions":dimensions,"fitem_weight":fitem_weight});
+          
         }
         else
         {
           // console.log("shiping weight 1******************",shiping_weight_xpath.nextSibling.textContent)
           fshiping_weight=shiping_weight_xpath.nextSibling.textContent
-          chrome.runtime.sendMessage(dimensions,fshiping_weight);
+          // chrome.runtime.sendMessage(dimensions,fshiping_weight);
+          chrome.runtime.sendMessage({"dimensions":dimensions,"fitem_weight":fshiping_weight});
         }
 
         // chrome.runtime.sendMessage(dimensions);
@@ -69,12 +73,14 @@ else
     {
       // console.log("item weight ******************",item_weight_xpath.nextSibling.nextSibling.textContent)
       fitem_weight=item_weight_xpath.nextSibling.nextSibling.textContent
-      chrome.runtime.sendMessage(dimensions2,fitem_weight);
+      // chrome.runtime.sendMessage(dimensions2,fitem_weight);
+      chrome.runtime.sendMessage({"dimensions2":dimensions2,"fitem_weight":fitem_weight});
     }
     else{
       // console.log("shiping weight ******************",shiping_weight_xpath.nextSibling.textContent)
       fshiping_weight=shiping_weight_xpath.nextSibling.textContent
-      chrome.runtime.sendMessage(dimensions2,shiping_weight);
+      // chrome.runtime.sendMessage(dimensions2,shiping_weight);
+      chrome.runtime.sendMessage({"dimensions2":dimensions2,"shiping_weight":fshiping_weight});
     }
     
     // chrome.runtime.sendMessage(dimensions2);

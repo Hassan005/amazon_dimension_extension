@@ -5,6 +5,7 @@ function setup()
   
 let bgPage = chrome.extension.getBackgroundPage();
 var meaurements =bgPage.measurements;
+var item_weight=bgPage.item_weight;
 // createP(meaurements)
 // console.log(title)
 // var dimensions = title.replace(/\s/g,'')
@@ -52,6 +53,8 @@ var meaurements =bgPage.measurements;
 // {  ************* cleaning the text from xpath ***************  }
 
 var vol = meaurements.split('x');
+item_weight = meaurements.split('(');
+
 // console.log(vol)
 var length = vol[0]
 var width = vol[1]
@@ -82,6 +85,11 @@ usps_cost=volume /  icubicfoot
 
 createElement("h3","USPS Cost")
 createP(usps_cost)
+
+
+createElement("h3","Shiping Wight")
+createP(item_weight)
+
 
 }
 
