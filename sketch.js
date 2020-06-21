@@ -7,7 +7,7 @@ function setup()
     createCanvas(240, 40); 
   
 let bgPage = chrome.extension.getBackgroundPage();
-var meaurements =bgPage.measurements;
+var measurements =bgPage.measurements;
 
 var item_weight=bgPage.item_weight;
 // createP(meaurements)
@@ -55,8 +55,17 @@ var item_weight=bgPage.item_weight;
 // createP(usps_cost)
 
 // {  ************* cleaning the text from xpath ***************  }
+// meaurements=parseFloat(meaurements)
+var vol=""
+if(measurements.includes('x')){
+     vol = measurements.split('x');
+    
+}
+else
+{
+    measurements=measurements
+}
 
-var vol = meaurements.split('x');
 
 if(item_weight.includes('('))
 {
@@ -84,17 +93,35 @@ var hight = vol[2]
 L=parseFloat(length)
 W=parseFloat(width)
 H=parseFloat(hight)
+var volume=""
+if (L && W && H)
+{
+    createElement("h3","Length")
+    createP(L)
+    createElement("h3","Width")
+    createP(W)
+    createElement("h3","Hight")
+    createP(H)
 
-createElement("h3","Length")
-createP(L)
-createElement("h3","Width")
-createP(W)
-createElement("h3","Hight")
-createP(H)
+    createElement("h3","Volume")
+    volume=L * W * H
+}
+else{
+    L=measurements
+    W=measurements
+    H=measurements
+
+    createElement("h3","Length")
+    createP(L)
+    createElement("h3","Width")
+    createP(W)
+    createElement("h3","Hight")
+    createP(H)
+}
 
 
-createElement("h3","Volume")
-volume=L * W * H
+
+
 createP(volume)
 icubicfoot=12 * 12* 12
 

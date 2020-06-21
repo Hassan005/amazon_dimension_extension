@@ -30,8 +30,11 @@ function receiver(request,sender,sendResponse)
     }
     else 
     {
-        console.log("dimensions 4")
+        console.log("dimensions 3")
+        
          window.measurements=request.dimensions3
+         console.log( window.measurements)
+
         if (request.fitem_weight)
         {
             window.item_weight=request.fitem_weight
