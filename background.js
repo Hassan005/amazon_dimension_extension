@@ -17,30 +17,40 @@ function receiver(request,sender,sendResponse)
        
         
     }
-    else if  (request.dimensions2)
-    {
-        // console.log("dimensions 2")
-        window.measurements=request.dimensions2
-        if (request.fitem_weight)
-        {
-            window.item_weight=request.fitem_weight
-        }
+    // else if  (request.dimensions2)
+    // {
+    //     // console.log("dimensions 2")
+    //     window.measurements=request.dimensions2
+    //     if (request.fitem_weight)
+    //     {
+    //         window.item_weight=request.fitem_weight
+    //     }
         
         
-    }
-    else 
-    {
-        console.log("dimensions 3")
+    // }
+    // else if (request.dimensions3)
+    // {
+    //     console.log("dimensions 3")
         
-         window.measurements=request.dimensions3
-         console.log( window.measurements)
+    //      window.measurements=request.dimensions3
+    //      console.log( window.measurements)
 
-        if (request.fitem_weight)
-        {
-            window.item_weight=request.fitem_weight
-        }
+    //     if (request.fitem_weight)
+    //     {
+    //         window.item_weight=request.fitem_weight
+    //     }
        
-    }
+    // }
+    // else
+    // {
+    //     window.measurements=request.dimensions
+    //     //  console.log( window.measurements)
+
+    //     if (request.fitem_weight)
+    //     {
+    //         window.item_weight=request.fitem_weight
+    //     }
+    // }
     // window.measurements=request
     console.log(request,"request*************************")
     // console.log(window.title)
