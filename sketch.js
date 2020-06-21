@@ -3,10 +3,12 @@
 
 function setup()
 {
-    noCanvas();
+    // noCanvas();
+    createCanvas(240, 40); 
   
 let bgPage = chrome.extension.getBackgroundPage();
 var meaurements =bgPage.measurements;
+
 var item_weight=bgPage.item_weight;
 // createP(meaurements)
 // console.log(title)
@@ -55,6 +57,7 @@ var item_weight=bgPage.item_weight;
 // {  ************* cleaning the text from xpath ***************  }
 
 var vol = meaurements.split('x');
+
 if(item_weight.includes('('))
 {
     item_weight = item_weight.split('(');
@@ -101,7 +104,7 @@ createP(icubicfoot)
 usps_cost=volume /  icubicfoot
 
 createElement("h3","USPS Cost")
-usps_cost=parseFloat(usps_cost.toFixed(1))
+usps_cost=parseFloat(usps_cost.toFixed(2))
 // usps_cost=Math.round(usps_cost)
 createP(usps_cost)
 
@@ -109,35 +112,123 @@ createP(usps_cost)
 createElement("h3","Shiping Wight")
 createP(item_weight)
 // var N1=7.78,N2=8.58,N3=9.96,N4=11.35,N5=12.78;
-if (usps_cost >= 0.1 &&  usps_cost <=0.2)
+if (usps_cost >= 0.1 &&  usps_cost <0.2)
 {
     createElement("h3","National Average")
     createP("7.78 $") 
-
+    createElement("h3","L, 1 & 2")
+    createP("7.02 $")
+    createElement("h3","Zone 3")
+    createP("7.35 $")
+    createElement("h3","Zone 4")
+    createP("$7.56 $")
+    createElement("h3","Zone 5")
+    createP("7.80 $")
+    createElement("h3","Zone 6")
+    createP("7.98 $")
+    createElement("h3","Zone 7")
+    createP("8.15 $")
+    createElement("h3","Zone 8")
+    createP("8.42 $")
+    createElement("h3","Zone 9")
+    createP("11.40 $")
+    
 }
-if (usps_cost >= 0.2 &&  usps_cost <=0.3)
+else if (usps_cost >= 0.2 &&  usps_cost <0.3)
 {
     createElement("h3","National Average")
     createP("8.58 $") 
 
+    createElement("h3","L, 1 & 2")
+    createP("7.46 $")
+    createElement("h3","Zone 3")
+    createP("7.80 $")
+    createElement("h3","Zone 4")
+    createP("8.02 $")
+    createElement("h3","Zone 5")
+    createP("8.71 $")
+    createElement("h3","Zone 6")
+    createP("9.00 $")
+    createElement("h3","Zone 7")
+    createP("9.22 $")
+    createElement("h3","Zone 8")
+    createP("9.56 $")
+    createElement("h3","Zone 9")
+    createP("13.15 $")
+
 }
-if (usps_cost >= 0.3 &&  usps_cost <= 0.4)
+else if (usps_cost >= 0.3 &&  usps_cost < 0.4)
 {
     createElement("h3","National Average")
     createP("9.96 $") 
 
-}
-if (usps_cost >= 0.4 &&  usps_cost <= 0.5)
-{
-    createElement("h3","National Average")
-    createP("11.35 $") 
+    createElement("h3","L, 1 & 2")
+    createP("8.04 $")
+    createElement("h3","Zone 3")
+    createP("8.26 $")
+    createElement("h3","Zone 4")
+    createP("8.55 $")
+    createElement("h3","Zone 5")
+    createP("9.65 $")
+    createElement("h3","Zone 6")
+    createP("10.98 $")
+    createElement("h3","Zone 7")
+    createP("11.58 $")
+    createElement("h3","Zone 8")
+    createP("12.29 $")
+    createElement("h3","Zone 9")
+    createP("19.12 $")
 
 }
-if (usps_cost >= 0.5 &&  usps_cost <= 0.6)
+else if (usps_cost >= 0.4 &&  usps_cost < 0.5)
+{
+    createElement("h3","National Average")
+    createP("11.35 $")
+    
+    createElement("h3","L, 1 & 2")
+    createP("8.21  $")
+    createElement("h3","Zone 3")
+    createP("8.57 $")
+    createElement("h3","Zone 4")
+    createP("8.93 $")
+    createElement("h3","Zone 5")
+    createP("10.31 $")
+    createElement("h3","Zone 6")
+    createP("12.78 $")
+    createElement("h3","Zone 7")
+    createP("14.02 $")
+    createElement("h3","Zone 8")
+    createP("16.02 $")
+    createElement("h3","Zone 9")
+    createP("24.28 $")
+
+}
+else if (usps_cost >= 0.5 &&  usps_cost < 0.6)
 {
     createElement("h3","National Average")
     createP("12.78 $") 
 
+    createElement("h3","L, 1 & 2")
+    createP("8.34 $")
+    createElement("h3","Zone 3")
+    createP("8.84 $")
+    createElement("h3","Zone 4")
+    createP("9.42 $")
+    createElement("h3","Zone 5")
+    createP("11.15 $")
+    createElement("h3","Zone 6")
+    createP("14.98 $")
+    createElement("h3","Zone 7")
+    createP("16.89 $")
+    createElement("h3","Zone 8")
+    createP("19.24 $")
+    createElement("h3","Zone 9")
+    createP("29.88 $")
+
+}
+else{
+    createElement("h3","National Average ")
+    createP("Class not defined") 
 }
 
 
